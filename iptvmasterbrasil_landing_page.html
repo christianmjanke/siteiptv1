@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPTV Master Brasil | IPTV Estável com 10.000 Canais em SD, HD, Full HD e 4K</title>
+  <meta name="description" content="IPTV Master Brasil: planos mensal, trimestral e anual com 10.000 canais, qualidade SD, HD, Full HD e 4K, suporte rápido e acesso imediato." />
+  <meta name="keywords" content="IPTV Master Brasil, IPTV estável, IPTV HD, IPTV Full HD, IPTV 4K, IPTV mensal, IPTV trimestral, IPTV anual, IPTV 1 tela, IPTV 2 telas, 10000 canais" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #101112;
+      --panel: #061d24;
+      --panel-2: #082832;
+      --dark: #07151b;
+      --cyan: #29d7f3;
+      --cyan-2: #13bde8;
+      --yellow: #ffb51e;
+      --green: #25d366;
+      --text: #ffffff;
+      --muted: #aebdc6;
+      --line: rgba(41, 215, 243, .42);
+      --card: rgba(255,255,255,.045);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .page {
+      max-width: 390px;
+      margin: 0 auto;
+      background:
+        radial-gradient(circle at 80% 82%, rgba(41, 215, 243, .18), transparent 22%),
+        radial-gradient(circle at 15% 10%, rgba(41, 215, 243, .16), transparent 28%),
+        linear-gradient(180deg, #06222b 0%, #061821 34%, #06161d 100%);
+      min-height: 100vh;
+      border-radius: 0 0 14px 14px;
+      overflow: hidden;
+      box-shadow: 0 18px 70px rgba(0,0,0,.45);
+    }
+
+    .container { width: calc(100% - 64px); margin: 0 auto; }
+
+    header {
+      height: 65px;
+      background: #071017;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav {
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: calc(100% - 64px);
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: -.04em;
+      white-space: nowrap;
+    }
+
+    .logo strong { color: var(--cyan); }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--cyan), #16bdf3);
+      display: grid;
+      place-items: center;
+      color: #061017;
+      box-shadow: 0 0 24px rgba(41,215,243,.25);
+    }
+
+    .logo-icon svg { width: 20px; height: 20px; }
+
+    .header-btn {
+      padding: 12px 17px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--cyan), #24c8ef);
+      color: #061017;
+      font-weight: 900;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    section { padding: 48px 0; }
+    .hero { padding-top: 48px; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid var(--line);
+      color: var(--cyan);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: rgba(41,215,243,.04);
+    }
+
+    .pill:before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 18px var(--cyan);
+    }
+
+    h1 {
+      margin-top: 24px;
+      font-size: 38px;
+      line-height: .98;
+      letter-spacing: -.07em;
+      font-weight: 900;
+    }
+
+    h1 .blue { color: var(--cyan); display: block; }
+    h1 .yellow { color: var(--yellow); }
+
+    .hero-text {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.48;
+      letter-spacing: -.02em;
+    }
+
+    .features {
+      margin-top: 34px;
+      display: grid;
+      gap: 17px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #edf7fb;
+      font-size: 15px;
+    }
+
+    .feature-icon {
+      width: 31px;
+      height: 31px;
+      flex: 0 0 31px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: rgba(41,215,243,.13);
+      color: var(--cyan);
+    }
+
+    .feature-icon svg { width: 16px; height: 16px; }
+
+    .cta-wrap { margin-top: 46px; position: relative; }
+
+    .btn-main {
+      width: 100%;
+      min-height: 57px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #27d8f1, #24c3f1);
+      color: #031217;
+      font-weight: 900;
+      font-size: 16px;
+      box-shadow: 0 22px 55px rgba(41,215,243,.22);
+      transition: .25s ease;
+    }
+
+    .btn-main:hover { transform: translateY(-2px); filter: brightness(1.06); }
+
+    .whats-float {
+      position: absolute;
+      right: -10px;
+      top: 11px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--green);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 26px rgba(37,211,102,.35);
+      color: #fff;
+    }
+
+    .whats-float svg { width: 24px; height: 24px; }
+
+    .section-title {
+      font-size: 31px;
+      line-height: 1;
+      letter-spacing: -.06em;
+      font-weight: 900;
+      margin-top: 18px;
+    }
+
+    .section-title .blue { color: var(--cyan); }
+    .section-title .yellow { color: var(--yellow); }
+
+    .section-sub {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .plans {
+      display: grid;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .plan-card {
+      position: relative;
+      border-radius: 18px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
+      border: 1px solid rgba(41,215,243,.25);
+      box-shadow: 0 18px 46px rgba(0,0,0,.18);
+      overflow: hidden;
+    }
+
+    .plan-card:after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: rgba(41,215,243,.12);
+      filter: blur(8px);
+    }
+
+    .plan-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .plan-name {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: rgba(255,181,30,.12);
+      border: 1px solid rgba(255,181,30,.28);
+      color: var(--yellow);
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .price {
+      position: relative;
+      z-index: 1;
+      margin-top: 16px;
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: -.08em;
+      color: var(--text);
+    }
+
+    .price small {
+      font-size: 15px;
+      color: var(--muted);
+      letter-spacing: -.02em;
+    }
+
+    .plan-list {
+      position: relative;
+      z-index: 1;
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+      color: #dce9ee;
+      font-size: 14px;
+    }
+
+    .plan-list li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .plan-list li:before {
+      content: '✓';
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(41,215,243,.14);
+      color: var(--cyan);
+      font-weight: 900;
+      font-size: 12px;
+      flex: 0 0 19px;
+    }
+
+    .plan-card .btn-main {
+      position: relative;
+      z-index: 1;
+      margin-top: 22px;
+      min-height: 50px;
+      font-size: 15px;
+    }
+
+    .benefit-grid, .proof-grid, .faq-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .mini-card {
+      border: 1px solid rgba(41,215,243,.18);
+      background: rgba(255,255,255,.045);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .mini-card h3 {
+      font-size: 17px;
+      letter-spacing: -.04em;
+      margin-bottom: 8px;
+    }
+
+    .mini-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .stars {
+      color: var(--yellow);
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .client {
+      margin-top: 15px;
+      color: #eaf6f9;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .final-cta {
+      padding-bottom: 58px;
+    }
+
+    .final-box {
+      border: 1px solid rgba(41,215,243,.34);
+      background:
+        radial-gradient(circle at bottom right, rgba(41,215,243,.18), transparent 34%),
+        rgba(255,255,255,.045);
+      border-radius: 22px;
+      padding: 26px;
+      text-align: center;
+    }
+
+    .final-box h2 {
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .final-box p {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+      margin: 14px 0 22px;
+    }
+
+    footer {
+      padding: 22px 32px 32px;
+      color: rgba(255,255,255,.45);
+      font-size: 12px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    @media (min-width: 760px) {
+      .page { max-width: 1120px; border-radius: 20px; margin: 24px auto; }
+      .container, .nav { width: min(1030px, calc(100% - 80px)); }
+      .hero .container { display: grid; grid-template-columns: 1fr .85fr; gap: 54px; align-items: center; }
+      h1 { font-size: 68px; }
+      .plans { grid-template-columns: repeat(3, 1fr); }
+      .benefit-grid, .proof-grid, .faq-grid { grid-template-columns: repeat(3, 1fr); }
+      .faq-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-visual {
+        display: block;
+        min-height: 560px;
+        border-radius: 26px;
+        border: 1px solid rgba(41,215,243,.26);
+        background:
+          linear-gradient(rgba(0,0,0,.16), rgba(0,0,0,.62)),
+          url('https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1200&q=80') center/cover;
+        box-shadow: 0 30px 90px rgba(0,0,0,.32);
+      }
+    }
+
+    @media (max-width: 759px) {
+      .hero-visual { display: none; }
+    }
+
+    @media (max-width: 420px) {
+      .page { max-width: 100%; }
+      .container, .nav { width: calc(100% - 46px); }
+      h1 { font-size: 37px; }
+      .hero-text { font-size: 19px; }
+      .header-btn { padding: 11px 13px; font-size: 13px; }
+      .logo { font-size: 17px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <a class="logo" href="#top" aria-label="IPTV Master">
+          <span class="logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="11" rx="2"></rect><path d="M8 3l4 4 4-4"></path></svg>
+          </span>
+          IPTV <strong>Master</strong>
+        </a>
+        <a class="header-btn" href="https://wa.me/5551999284844?text=Ol%C3%A1%20tudo%20bem%3F%20Vim%20pelo%20seu%20site%20de%20TV%20ONLINE%20%28IPTV%29%20e%20queria%20testar%20para%20comprar." target="_blank" rel="noopener">Quero assinar</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container">
+          <div>
+            <span class="pill">IPTV estável • HD • suporte 24h</span>
+            <h1>
+              IPTV com
+              <span class="blue">Qualidade,</span>
+              <span><span class="yellow">Estabilidade</span> e</span>
+              <span>Acesso Imediato</span>
+            </h1>
+
+            <p class="hero-text">
+              Assista seus canais, filmes, séries e esportes favoritos com um serviço de IPTV rápido, estável e compatível com Smart TV, TV Box, celular, tablet e computador.
+            </p>
+
+            <div class="features">
+              <div class="feature"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>10.000 canais disponíveis</div>
+              <div class="feature"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg></span>SD, HD, Full HD e 4K</div>
+              <div class="feature"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Suporte dedicado pelo WhatsApp</div>
+              <div class="feature"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg></span>Compatível com vários dispositivos</div>
+            </div>
+
+            <div class="cta-wrap">
+              <a class="btn-main" href="https://wa.me/5551999284844?text=Ol%C3%A1%20tudo%20bem%3F%20Vim%20pelo%20seu%20site%20de%20TV%20ONLINE%20%28IPTV%29%20e%20queria%20testar%20para%20comprar." target="_blank" rel="noopener">Quero começar agora</a>
+              <a class="whats-float" href="https://wa.me/5551999284844?text=Ol%C3%A1%20tudo%20bem%3F%20Vim%20pelo%20seu%20site%20de%20TV%20ONLINE%20%28IPTV%29%20e%20queria%20testar%20para%20comprar." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+                <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 4C9.41 4 4 9.28 4 15.77c0 2.08.57 4.11 1.65 5.88L4 28l6.52-1.62A12.27 12.27 0 0 0 16.04 27C22.67 27 28 21.72 28 15.77S22.67 4 16.04 4zm0 20.96c-1.73 0-3.42-.45-4.9-1.31l-.35-.2-3.87.96.98-3.68-.23-.38a9.12 9.12 0 0 1-1.43-4.88c0-5.06 4.39-9.17 9.8-9.17s9.8 4.11 9.8 9.17-4.39 9.49-9.8 9.49zm5.38-6.9c-.3-.14-1.75-.85-2.02-.95-.27-.1-.47-.14-.67.14-.2.28-.77.95-.95 1.14-.17.19-.35.21-.65.07-.3-.14-1.25-.45-2.38-1.43-.88-.77-1.47-1.71-1.64-1.99-.17-.28-.02-.44.13-.58.13-.13.3-.35.45-.52.15-.18.2-.3.3-.49.1-.19.05-.36-.02-.5-.08-.14-.67-1.59-.92-2.17-.24-.56-.49-.49-.67-.5h-.57c-.2 0-.52.07-.8.36-.27.28-1.05 1-1.05 2.44s1.08 2.83 1.23 3.03c.15.19 2.13 3.18 5.16 4.46.72.3 1.28.48 1.72.62.72.22 1.38.19 1.9.12.58-.08 1.75-.7 2-1.37.25-.67.25-1.25.17-1.37-.08-.12-.27-.19-.57-.33z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section id="planos">
+        <div class="container">
+          <span class="pill">Planos IPTV Master</span>
+          <h2 class="section-title">Escolha o plano <span class="blue">ideal</span></h2>
+          <p class="section-sub">Todos os planos contam com 10.000 canais e qualidade SD, HD, Full HD e 4K.</p>
+
+          <div class="plans">
+            <article class="plan-card">
+              <div class="plan-top">
+                <h3 class="plan-name">Mensal</h3>
+                <span class="tag">1 tela</span>
+              </div>
+              <div class="price">R$ 29,90 <small>/mês</small></div>
+              <ul class="plan-list">
+                <li>10.000 canais</li>
+                <li>SD, HD, Full HD e 4K</li>
+                <li>1 tela disponível</li>
+                <li>Suporte pelo WhatsApp</li>
+              </ul>
+              <a class="btn-main" href="https://wa.me/5551999284844?text=Ol%C3%A1%20tudo%20bem%3F%20Vim%20pelo%20seu%20site%20de%20TV%20ONLINE%20%28IPTV%29%20e%20queria%20testar%20para%20comprar.%20-%20queria%20testar%20o%20plano%20mensal%20para%20comprar" target="_blank" rel="noopener">Assinar mensal</a>
+            </article>
+
+            <article class="plan-card">
+              <div class="plan-top">
+                <h3 class="plan-name">Trimestral</h3>
+                <span class="tag">2 telas</span>
+              </div>
+              <div class="price">R$ 74,90 <small>/3 meses</small></div>
+              <ul class="plan-list">
+                <li>10.000 canais</li>
+                <li>SD, HD, Full HD e 4K</li>
+                <li>2 telas disponíveis</li>
+                <li>Melhor custo-benefício</li>
+              </ul>
+              <a class="btn-main" href="https://wa.me/5551999284844?text=Ol%C3%A1%20tudo%20bem%3F%20Vim%20pelo%20seu%20site%20de%20TV%20ONLINE%20%28IPTV%29%20e%20queria%20testar%20para%20comprar.%20-%20queria%20testar%20o%20plano%20trimestral%20para%20comprar" target="_blank" rel="noopener">Assinar trimestral</a>
+            </article>
+
+            <article class="plan-card">
+              <div class="plan-top">
+                <h3 class="plan-name">Anual</h3>
+                <span class="tag">2 telas</span>
+              </div>
+              <div class="price">R$ 239,90 <small>/ano</small></div>
+              <ul class="plan-list">
+                <li>10.000 canais</li>
+                <li>SD, HD, Full HD e 4K</li>
+                <li>2 telas disponíveis</li>
+                <li>Mais economia no longo prazo</li>
+              </ul>
+              <a class="btn-main" href="https://wa.me/5551999284844?text=Ol%C3%A1%20tudo%20bem%3F%20Vim%20pelo%20seu%20site%20de%20TV%20ONLINE%20%28IPTV%29%20e%20queria%20testar%20para%20comprar.%20-%20queria%20testar%20o%20plano%20anual%20para%20comprar" target="_blank" rel="noopener">Assinar anual</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="beneficios">
+        <div class="container">
+          <span class="pill">Por que escolher</span>
+          <h2 class="section-title">IPTV simples, <span class="yellow">rápido</span> e completo</h2>
+          <p class="section-sub">Uma opção prática para quem quer variedade, qualidade de imagem e atendimento direto na hora de configurar.</p>
+
+          <div class="benefit-grid">
+            <article class="mini-card">
+              <h3>Alta variedade</h3>
+              <p>Conte com 10.000 canais para assistir conteúdos variados em um só lugar.</p>
+            </article>
+            <article class="mini-card">
+              <h3>Qualidade de imagem</h3>
+              <p>Transmissão em SD, HD, Full HD e 4K, conforme disponibilidade e conexão.</p>
+            </article>
+            <article class="mini-card">
+              <h3>Suporte direto</h3>
+              <p>Atendimento pelo WhatsApp para orientar o acesso e a instalação.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="depoimentos">
+        <div class="container">
+          <span class="pill">Avaliações</span>
+          <h2 class="section-title">Quem assina, <span class="blue">continua usando</span></h2>
+          <p class="section-sub">Comentários em formato ilustrativo para apresentar a experiência esperada do cliente.</p>
+
+          <div class="proof-grid">
+            <article class="mini-card">
+              <div class="stars">★★★★★</div>
+              <p>“Uso há bastante tempo e gosto muito da praticidade. Sempre que precisei, fui atendido rápido.”</p>
+              <div class="client">Marcelo R.</div>
+            </article>
+            <article class="mini-card">
+              <div class="stars">★★★★★</div>
+              <p>“O plano com 2 telas ficou perfeito aqui em casa. A imagem é boa e a configuração foi simples.”</p>
+              <div class="client">Patrícia L.</div>
+            </article>
+            <article class="mini-card">
+              <div class="stars">★★★★★</div>
+              <p>“Já testei outros serviços, mas continuei pela facilidade, suporte e variedade de canais.”</p>
+              <div class="client">Renan M.</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="duvidas">
+        <div class="container">
+          <span class="pill">Dúvidas frequentes</span>
+          <h2 class="section-title">Antes de <span class="yellow">assinar</span></h2>
+
+          <div class="faq-grid">
+            <article class="mini-card">
+              <h3>Funciona em Smart TV?</h3>
+              <p>Sim. Também pode funcionar em TV Box, celular, tablet e computador, conforme o aplicativo indicado.</p>
+            </article>
+            <article class="mini-card">
+              <h3>Tem suporte?</h3>
+              <p>Sim. O atendimento é feito pelo WhatsApp para orientar o acesso e configuração.</p>
+            </article>
+            <article class="mini-card">
+              <h3>Quantos canais tem?</h3>
+              <p>Os planos contam com 10.000 canais, com opções em SD, HD, Full HD e 4K.</p>
+            </article>
+            <article class="mini-card">
+              <h3>Qual plano escolher?</h3>
+              <p>Mensal para 1 tela, Trimestral para 2 telas e Anual para 2 telas com maior economia.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="container">
+          <div class="final-box">
+            <h2>Comece agora com a IPTV Master</h2>
+            <p>Escolha seu plano e fale diretamente pelo WhatsApp para receber as orientações de acesso.</p>
+            <a class="btn-main" href="https://wa.me/5551999284844?text=Ol%C3%A1%20tudo%20bem%3F%20Vim%20pelo%20seu%20site%20de%20TV%20ONLINE%20%28IPTV%29%20e%20queria%20testar%20para%20comprar." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 IPTV Master Brasil. Planos: mensal, trimestral e anual. 10.000 canais em SD, HD, Full HD e 4K.
+    </footer>
+  </div>
+</body>
+</html>
